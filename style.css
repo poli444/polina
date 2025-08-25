@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  font-family: sans-serif;
+}
+
+/* Фиксированная плашка */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 1440px;
+  z-index: 1000;
+}
+
+.header img {
+  width: 100%;
+  display: block;
+}
+
+/* Отступ под плашку */
+body::before {
+  content: "";
+  display: block;
+  height: 80px; /* высота десктопной плашки */
+}
+
+/* Блоки */
+.block {
+  width: 100%;
+  max-width: 1440px;
+}
+
+.block img {
+  width: 100%;
+  display: block;
+}
+
+/* Отображение desktop / mobile */
+img.desktop { display: block; }
+img.mobile { display: none; }
+
+@media (max-width: 768px) {
+  img.desktop { display: none; }
+  img.mobile { display: block; }
+  body::before { height: 60px; } /* под высоту мобильной плашки */
+}

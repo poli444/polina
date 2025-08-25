@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Моё портфолио</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Фиксированная верхняя плашка -->
+  <div class="header">
+    <img class="desktop" src="images/top-desktop.png" alt="Плашка десктоп">
+    <img class="mobile" src="images/top-mobile.png" alt="Плашка мобильная">
+  </div>
+
+  <!-- Контейнер блоков -->
+  <div id="blocks-container"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const container = document.getElementById('blocks-container');
+      const totalBlocks = 18;
+
+      for (let i = 1; i <= totalBlocks; i++) {
+        const block = document.createElement('div');
+        block.className = 'block';
+        block.innerHTML = `
+          <img class="desktop" src="images/desktop-${i}.png" alt="Блок ${i}" loading="lazy">
+          <img class="mobile" src="images/mobile-${i}.png" alt="Блок ${i}" loading="lazy">
+        `;
+        container.appendChild(block);
+      }
+    });
+  </script>
+
+</body>
+</html>
